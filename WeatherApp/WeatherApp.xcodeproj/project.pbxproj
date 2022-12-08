@@ -24,6 +24,11 @@
 		C7574A1529418C8A00352349 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7574A1429418C8A00352349 /* DateHelper.swift */; };
 		C7574A1729418FE600352349 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7574A1629418FE600352349 /* CityModel.swift */; };
 		C7574A1929419D4700352349 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7574A1829419D4700352349 /* SearchViewModel.swift */; };
+		C7574A1C2941A74200352349 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = C7574A1B2941A74200352349 /* NVActivityIndicatorView */; };
+		C7574A1E2941A74200352349 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = C7574A1D2941A74200352349 /* NVActivityIndicatorViewExtended */; };
+		C7574A212941A75200352349 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C7574A202941A75200352349 /* Kingfisher */; };
+		C7574A232941A97100352349 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7574A222941A97100352349 /* LocationManager.swift */; };
+		C7574A262941B82400352349 /* SwiftMessages in Frameworks */ = {isa = PBXBuildFile; productRef = C7574A252941B82400352349 /* SwiftMessages */; };
 		C761395A2941347400D620B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76139592941347400D620B6 /* AppDelegate.swift */; };
 		C761395C2941347400D620B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C761395B2941347400D620B6 /* SceneDelegate.swift */; };
 		C761395E2941347400D620B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C761395D2941347400D620B6 /* ViewController.swift */; };
@@ -54,6 +59,7 @@
 		C7574A1429418C8A00352349 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		C7574A1629418FE600352349 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		C7574A1829419D4700352349 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C7574A222941A97100352349 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C76139562941347400D620B6 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76139592941347400D620B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C761395B2941347400D620B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7574A212941A75200352349 /* Kingfisher in Frameworks */,
+				C7574A1C2941A74200352349 /* NVActivityIndicatorView in Frameworks */,
+				C7574A262941B82400352349 /* SwiftMessages in Frameworks */,
+				C7574A1E2941A74200352349 /* NVActivityIndicatorViewExtended in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +103,7 @@
 			children = (
 				C7574A012941749E00352349 /* Constants.swift */,
 				C7574A1429418C8A00352349 /* DateHelper.swift */,
+				C7574A222941A97100352349 /* LocationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,6 +229,12 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				C7574A1B2941A74200352349 /* NVActivityIndicatorView */,
+				C7574A1D2941A74200352349 /* NVActivityIndicatorViewExtended */,
+				C7574A202941A75200352349 /* Kingfisher */,
+				C7574A252941B82400352349 /* SwiftMessages */,
+			);
 			productName = WeatherApp;
 			productReference = C76139562941347400D620B6 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +263,11 @@
 				Base,
 			);
 			mainGroup = C761394D2941347400D620B6;
+			packageReferences = (
+				C7574A1A2941A74200352349 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				C7574A1F2941A75200352349 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				C7574A242941B82400352349 /* XCRemoteSwiftPackageReference "SwiftMessages" */,
+			);
 			productRefGroup = C76139572941347400D620B6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -290,6 +312,7 @@
 				C7574A022941749E00352349 /* Constants.swift in Sources */,
 				C7574A112941793000352349 /* DictionaryExtension.swift in Sources */,
 				C761397A294139E500D620B6 /* ColorExtension.swift in Sources */,
+				C7574A232941A97100352349 /* LocationManager.swift in Sources */,
 				C761395C2941347400D620B6 /* SceneDelegate.swift in Sources */,
 				C7574A1929419D4700352349 /* SearchViewModel.swift in Sources */,
 				C7574A072941760800352349 /* HttpMethodsEnum.swift in Sources */,
@@ -446,11 +469,14 @@
 				DEVELOPMENT_TEAM = F433CSXY33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather App want to access your location to update your weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather App want to access your location to update your weather";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,11 +503,14 @@
 				DEVELOPMENT_TEAM = F433CSXY33;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Weather App want to access your location to update your weather";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Weather App want to access your location to update your weather";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +549,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C7574A1A2941A74200352349 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C7574A1F2941A75200352349 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C7574A242941B82400352349 /* XCRemoteSwiftPackageReference "SwiftMessages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftKickMobile/SwiftMessages";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7574A1B2941A74200352349 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7574A1A2941A74200352349 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		C7574A1D2941A74200352349 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7574A1A2941A74200352349 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		C7574A202941A75200352349 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7574A1F2941A75200352349 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C7574A252941B82400352349 /* SwiftMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7574A242941B82400352349 /* XCRemoteSwiftPackageReference "SwiftMessages" */;
+			productName = SwiftMessages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C761394E2941347400D620B6 /* Project object */;
 }

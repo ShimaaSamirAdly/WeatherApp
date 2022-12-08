@@ -40,6 +40,9 @@ class SearchResultsViewController: UIViewController {
         searchTextField.layer.borderColor = UIColor.blueColor.cgColor
         searchTextField.layer.cornerRadius = 15
         searchTextField.text = viewModel?.searchedString
+        if let clearButton = searchTextField.value(forKeyPath: "_clearButton") as? UIButton {
+            clearButton.setImage(UIImage(named:"ic_clear"), for: .normal)
+        }
     }
     
     func setUpObservers() {

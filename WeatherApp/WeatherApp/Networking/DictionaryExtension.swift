@@ -11,7 +11,7 @@ extension Dictionary {
     var queryString: String {
         var outputString: String = "?"
         for (key, value) in self {
-            outputString += "\(key)=\(value)&"
+            outputString += "\(key)=\(value)&".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         }
         outputString = String(outputString.dropLast())
         return outputString
@@ -20,7 +20,7 @@ extension Dictionary {
     var subueryString: String {
         var outputString: String = "&"
         for (key, value) in self {
-            outputString += "\(key)=\(value)&"
+            outputString += "\(key)=\(value)&".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         }
         outputString = String(outputString.dropLast())
         return outputString

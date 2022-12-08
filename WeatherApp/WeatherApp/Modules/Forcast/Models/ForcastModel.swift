@@ -52,6 +52,17 @@ struct Condition: Codable {
     var text: String?
     var icon: String?
     var code: Int?
+    
+    func getIconName() -> String {
+        guard let separatedData = icon?.split(separator: "/") else { return "" }
+        var iconName = ""
+        if separatedData[separatedData.count - 2] != "night" {
+            iconName = "D"
+        }
+        let iconNumber = separatedData.last?.split(separator: ".").first
+        iconName.append("\(iconNumber ?? "")")
+        return iconName
+    }
 }
 
 struct Forecast: Codable {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ForcastViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class ForcastViewController: UIViewController {
     @IBOutlet weak var todayWeatherImg: UIImageView!
     @IBOutlet weak var todayTempLbl: UILabel!
     @IBOutlet weak var dayLbl: UILabel!
-    @IBOutlet weak var tomorrowWeatherLbl: UIImageView!
+    @IBOutlet weak var tomorrowWeatherImg: UIImageView!
     @IBOutlet weak var tomorrowTempLbl: UILabel!
     @IBOutlet weak var tomorrowLbl: UILabel!
     @IBOutlet weak var thirdDayWeatherImg: UIImageView!
@@ -37,9 +38,19 @@ class ForcastViewController: UIViewController {
     }
     
     func setUpObservers() {
+        viewModel.isLoading.sink { [weak self] isLoading in
+            guard let self = self else { return }
+            isLoading ? self.showLoader() : self.hideLoader()
+        }.store(in: &viewModel.cancellableSet)
+        
         viewModel.weatherData.sink { [weak self] forecastModel in
             guard let self = self else { return }
             self.updateUI()
+        }.store(in: &viewModel.cancellableSet)
+        
+        viewModel.showError.sink { [weak self] error in
+            guard let self = self else { return }
+            self.showErrorMsg(errorMsg: error)
         }.store(in: &viewModel.cancellableSet)
     }
     
@@ -54,6 +65,7 @@ class ForcastViewController: UIViewController {
     }
     
     func updateUI() {
+        setUpImages()
         timeLbl.text = viewModel.getCurrentTime()
         countryLbl.text = viewModel.getCityName()
         dateLbl.text = viewModel.getCurrentDate()
@@ -65,6 +77,13 @@ class ForcastViewController: UIViewController {
         tomorrowTempLbl.text = viewModel.getTomorrowAvgTemp()
         thirdDayTempLbl.text = viewModel.getThirdDayAvgTemp()
         thirdDayLbl.text = viewModel.getThirdDayName()
+    }
+    
+    func setUpImages() {
+        weatherImg.image = UIImage(named: viewModel.getWeatherImg())
+        todayWeatherImg.image = UIImage(named: viewModel.getTodayImg())
+        tomorrowWeatherImg.image = UIImage(named: viewModel.getTomorrowImg())
+        thirdDayWeatherImg.image = UIImage(named: viewModel.getThirdDayImg())
     }
     
     @objc func refreshWeather(sender: UIRefreshControl) {
